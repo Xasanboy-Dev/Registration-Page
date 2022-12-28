@@ -1,0 +1,38 @@
+<%- include("head")%>
+    <div class="all">
+        <% for(let i in users){%>
+            <form action="/users/<%= users[i].id%>" method="post" class="p-2 d-flex gap-2 m-2 card">
+                <div class="name">
+                    <lablel>Name:<%= users[i].name%>
+                    </lablel>
+                </div>
+                <div class="lastname">
+                    <label>Lastname:<%= users[i].lastname%></label>
+                </div>
+                <div class="email">
+                    <label>Email:<%= users[i].email%></label>
+                </div>
+                <div class="Password">
+                    <label>Password:<%= users[i].password%></label>
+                </div>
+                <div class="Gender">
+                    <label>Gender:<%= users[i].gender%></label>
+                </div>
+                <div class="Country">
+                    <label>Country:<%= users[i].country%></label>
+                </div>
+                <button class="btn btn-primary text-warning">Delete</button>
+            </form>
+            <%}%>
+    </div>
+    <div class="button d-flex justify-content-center gap-5">
+        <a class="btn btn-primary text-dark rounded" href="/register">Registration</a>
+        <a class="btn btn-warning text-light rounded" href="/login">Login</a>
+    </div>
+    <style>
+        .all {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+    </style>
+    <%- include("footer")%>

@@ -1,0 +1,48 @@
+<%- include("head")%>
+    <div class="d-flex justify-content-center">
+        <form action="/info" method="post" class="card d-flex gap-3 p-5 m-2 justify-content-center">
+            <div class="d-flex Name">
+                <label for="name">Name:</label>
+                <input type="text" class="rounded" id="name" name="name" value="<%= users.name%>">
+            </div>
+            <div class="Lastname">
+                <label for="lastname">Lastname</label>
+                <input type="text" name="lastname" value="<%= users.lastname%>" id="lastname">
+            </div>
+            <div class="Email">
+                <label for="Email">Lastname</label>
+                <input type="email" name="email" value="<%= users.email%>" id="email">
+            </div>
+            <div class="Password">
+                <label for="password">Password</label>
+                <input type="password" name="password" value="<%= users.password%>" id="password">
+            </div>
+            <div class="Gender">
+                <label>Gender</label>
+                <select name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <input name="id" style="display:none;" value="<%= users.id%>">
+            <div class="Country">
+                <label>Country</label>
+                <%- include("country")%>
+            </div>
+            <button type="submit" class="text-light bg-primary rounded">Save</button>
+        </form>
+    </div>
+    <div class="buttons d-flex justify-content-center gap-3">
+        <div class="card btn bg-warning">
+            <a href="/users/<%= users.id%>" style="text-decoration:none;">
+                <h3 class="text-danger">Delete my DATA <i class="bi bi-person-dash"></i>
+                </h3>
+            </a>
+        </div>
+        <div class="card btn bg-primary">
+            <a href="about" style="text-decoration:none;">
+                <h3 class="text-light">See <i class="bi bi-eyeglasses"></i> all users</h3>
+            </a>
+        </div>
+    </div>
+    <%- include("footer")%>

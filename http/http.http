@@ -1,0 +1,15 @@
+GET http://localhost:8080/users HTTP/1.1
+###
+POST  http://localhost:8080/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"Xusinboy",
+    "lastname":"Abdurasulov",
+    "email":"Xusan@gmail.com",
+    "gender":"Male",
+    "country":"Uzbekistan",
+    "password":"558133"
+}
+###
+DELETE http://localhost:8080/users/3
