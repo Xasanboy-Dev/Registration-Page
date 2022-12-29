@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express"
 import { getMethod, postMethod, deleteMethod } from "../functions/function"
 import { pool } from "../config/db"
-import e from "express"
+import { shoppingList } from "./Type"
 const server = express()
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
@@ -21,6 +21,14 @@ server.get("/about", async (req: Request, res: Response) => {
         res.render("about", { users, title: "All Users" })
     } catch (error) {
         res.status(500).json({ message: "You have an error" })
+    }
+})
+// 
+server.get("/shoppinglist", (req: Request, res: Response) => {
+    try {
+        res.render("lists", { title: "Ahopping List", list: shoppingList })
+    } catch (error: any) {
+        res.status(500).json({ message: error.message })
     }
 })
 // 

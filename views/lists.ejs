@@ -1,0 +1,17 @@
+<%- include("head")%>
+   <div class="shopping card">
+      <% for(let r in list)%>
+         <div class="prooduct-name card">
+            <label>
+               <%= r%>
+            </label>
+            <% for(let r in list[r]){%>
+               <label>Name:<%= list[r].name%></label>
+               <label>Price:<%= list[r].price%></label>
+               <label>Description: <%= list[r].description%></label>
+               <label>Modle: <%= list[r].model%></label>
+               <%}%>
+         </div>
+         <%}%>
+   </div>
+   <%- include("footer")%>
